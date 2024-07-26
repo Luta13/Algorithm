@@ -1,0 +1,23 @@
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+        
+        // [0][0] [0][1] [0][2], [1][0][]
+
+        for(int i = 0; i < commands.length; i++)
+        {
+              
+            int[] result = Arrays.copyOfRange(array,commands[i][0]-1,commands[i][1]); 
+            Arrays.sort(result);
+            answer[i] = result[commands[i][2]-1];
+        }
+
+
+
+
+
+
+        return answer;
+    }
+}
